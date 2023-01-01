@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alura Typer</title>
+    <link rel="stylesheet" href="css/libs/materialize.min.css">
+    <link rel="stylesheet" href="css/libs/google-fonts.css">
+    
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="center">Alura Typer</h1>
+        <p id="frase">Digite o mais rápido que puder.</p>
+
+        <ul class="center">
+            <li class="icones">
+                <i class="material-icons">assignment</i> 
+                <span id="tamanho-frase"></span> Palavras
+            </li>
+            <li class="icones">
+                <i class="material-icons">av_timer</i> 
+                <span id="tempo-restante"> 20 </span> Segundos
+            </li>
+        </ul>
+
+        <textarea id="campo-digitacao"  cols="40" rows="10"></textarea>
+
+        
+        <!-- <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons" id="reinicia-jogo">refresh</i></a> -->
+        <button id="reinicia-jogo" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons" id="reinicia-jogo">refresh</i></button>
+    
+
+        <ul class="center">
+            <li><span id="contador-caracteres">0</span> Caracteres</li>
+            <li><span id="contador-palavras">0</span> Palavras</li>
+        </ul>
+
+
+        <button class="colapse">Colapse</button>
+        <p class="lorem">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, placeat?</p>
+        <p class="lorem">Lorem ipsum dolor sit amet.</p>
+    </div>
+    
+
+    <script src="js/jquery.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+</html>

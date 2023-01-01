@@ -1,0 +1,23 @@
+#campo-digitacao {
+  font-size: 20px;
+  height: 130px;
+}
+#frase {
+  font-size: 2rem;
+}
+.campo-desativado {
+  background-color: gainsboro;
+}
+.icones {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+}
+.certo {
+  border: 4px solid green;
+  
+}
+.errado {
+  border: 4px solid red;
+}
