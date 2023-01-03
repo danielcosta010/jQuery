@@ -21,3 +21,7 @@
 .errado {
   border: 5px solid red;
 }
+
+.placar {
+  display: none;
+}

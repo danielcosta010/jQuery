@@ -22,7 +22,7 @@
             </li>
             <li class="icones">
                 <i class="material-icons">av_timer</i> 
-                <span id="tempo-restante"> 20 </span> Segundos
+                <span id="tempo-restante"> 5 </span> Segundos
             </li>
         </ul>
 
@@ -31,6 +31,7 @@
         
         <!-- <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons" id="reinicia-jogo">refresh</i></a> -->
         <button id="reinicia-jogo" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons" id="reinicia-jogo">refresh</i></button>
+        <button id="remove-placar" class="btn-floating btn-large waves-effect waves-light green"><i class="material-icons" id="reinicia-jogo">visibility</i></button>
     
 
         <ul class="center">
@@ -39,19 +40,17 @@
         </ul>
 
         <section class="placar">
-            <table class="center">
-                <h3 class="center">Placar</h3>
-                <thead >
+            <h3 class="center">Placar</h3>
+            <table class="centered bordered">
+                <thead>
                     <tr>
-                        <td>Nome</td>
-                        <td>N. de Palavras</td>
+                        <th>Nome</th>
+                        <th>N. de Palavras</th>
+                        <th>Remover</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Daniel</td>
-                        <td>10</td>
-                    </tr>
+                    
                 </tbody>
             </table>
         </section>
@@ -61,6 +60,7 @@
     
     <script src="js/jquery.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/placar.js"></script>
     
 </body>
 </html>

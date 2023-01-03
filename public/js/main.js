@@ -13,8 +13,8 @@ $(() => {
 })
 
 function contafrase() {
-   var numeroDePalavras = frase.split(' ').length;
-   var tamanhoFrase = $('#tamanho-frase');
+   let numeroDePalavras = frase.split(' ').length;
+   let tamanhoFrase = $('#tamanho-frase');
    tamanhoFrase.text(numeroDePalavras);
 }
 
@@ -39,19 +39,23 @@ function iniciaTempo() {
          $('#tempo-restante').text(tempoRestante);
          if (tempoRestante < 1) {
             clearInterval(intervalId);
-            campo.attr('disabled', true);
-            reinicia.attr('disabled', false);
-            campo.toggleClass('campo-desativado');
+            fimJogo();
+            inserePlacar();
          }
       }, 1000);
    });
 }
 
+function fimJogo() {
+   campo.attr('disabled', true);
+   reinicia.attr('disabled', false);
+   campo.toggleClass('campo-desativado');
+}
 
 
 campo.on("input", function() {
     let digitado = campo.val();
-   //  var comparavel = frase.substr(0 , digitado.length);
+   //  let comparavel = frase.substr(0 , digitado.length);
 
    //  if(digitado == comparavel) {
    //      campo.addClass("certo");
