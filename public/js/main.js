@@ -50,16 +50,24 @@ function iniciaTempo() {
 
 
 campo.on("input", function() {
-    var digitado = campo.val();
-    var comparavel = frase.substr(0 , digitado.length);
+    let digitado = campo.val();
+   //  var comparavel = frase.substr(0 , digitado.length);
 
-    if(digitado == comparavel) {
-        campo.addClass("certo");
-        campo.removeClass("errado");
-    } else {
-        campo.addClass("errado");
-        campo.removeClass("certo");
-    }
+   //  if(digitado == comparavel) {
+   //      campo.addClass("certo");
+   //      campo.removeClass("errado");
+   //  } else {
+   //      campo.addClass("errado");
+   //      campo.removeClass("certo");
+   //  }
+
+   if( frase.startsWith(digitado)) {
+      campo.addClass('certo');
+      campo.removeClass('errado');
+     } else {
+      campo.addClass('errado');
+      campo.removeClass('certo')
+     }
 });
 
 function reiniciaJogo() {
@@ -73,8 +81,3 @@ function reiniciaJogo() {
    campo.removeClass("certo");
    iniciaTempo()
 }
-
-
-   $('.colapse').click(function() {
-      $('.lorem').toggle(1000)
-   })

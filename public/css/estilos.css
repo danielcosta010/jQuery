@@ -15,9 +15,9 @@
   gap: 3px;
 }
 .certo {
-  border: 4px solid green;
+  border: 5px solid rgb(54, 246, 54);
   
 }
 .errado {
-  border: 4px solid red;
+  border: 5px solid red;
 }
