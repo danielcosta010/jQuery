@@ -25,3 +25,11 @@
 .placar {
   display: none;
 }
+body { 
+  overflow: scroll;
+}
+
+
+.invisivel {
+  display: none;
+}

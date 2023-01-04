@@ -9,7 +9,22 @@ function inserePlacar() {
   linha.find('.remover').click(removeLinha);
 
   corpoTabela.append(linha);
-};
+  $('.placar').slideDown(400)
+  scrollPlacar();
+}
+
+function scrollPlacar() {
+  // let posicaoPlacar = $('.placar').offset().top;
+  // $('html, body').animate(
+  //   {
+  //     scrollTop: `${posicaoPlacar}px`
+  //   }, 1000);
+
+  $("html, body").animate(
+    {
+      scrollTop: $('html, body').get(0).scrollHeight
+    }, 2000);
+}
 
 function novaLinha(usuario, palavras) {
   let linha = $('<tr>');
@@ -29,14 +44,27 @@ function novaLinha(usuario, palavras) {
 
   return linha
 
-};
+}
 
 function removeLinha(e) {
   e.preventDefault();
-  $(this).parent().parent().remove();
-};
+  let linha = $(this).parent().parent();
+  linha.fadeOut(2000);
+  setTimeout(function() {
+    linha.remove()
+  }, 2000);
+}
 
 function removePlacar()  {
-  $('.placar').slideToggle(600)
-};
+  $('.placar').stop().slideToggle(600)
+}
+
+
   
+$("#dropdown").mouseenter(function() {
+  $("#opcoes").stop().slideDown();
+});
+
+$("#dropdown").mouseleave(function() {
+  $("#opcoes").stop().slideUp();
+});
