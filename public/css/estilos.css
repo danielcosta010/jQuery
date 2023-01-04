@@ -33,3 +33,14 @@ body {
 .invisivel {
   display: none;
 }
+.erro {
+  color: red;
+  display: none;
+}
+.spiner {
+  display: none;
+}
+#input-pesquisa {
+  width: 50px;
+  text-align: center;
+}

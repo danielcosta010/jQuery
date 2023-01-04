@@ -1,7 +1,6 @@
 var campo = $('#campo-digitacao');
 var tempoInicial = $("#tempo-restante").text();
 var reinicia = $('#reinicia-jogo');
-var frase = $('#frase').text();
 
 // A funçao de inicialização abaixo foi abreviada de $(document).ready(function(){})
 
@@ -9,10 +8,17 @@ $(() => {
    contafrase();
    contaPalavrasECaracteres();
    iniciaTempo();
+   inicializaMarcadores();
    reinicia.click(reiniciaJogo);
 })
 
+function atualizaTempoInicial(tempo) {
+   tempoInicial = tempo;
+   $('#tempo-restante').text(tempo);
+}
+
 function contafrase() {
+   let frase = $('#frase').text();
    let numeroDePalavras = frase.split(' ').length;
    let tamanhoFrase = $('#tamanho-frase');
    tamanhoFrase.text(numeroDePalavras);
@@ -52,27 +58,30 @@ function fimJogo() {
    campo.toggleClass('campo-desativado');
 }
 
+function inicializaMarcadores() {
+   campo.on("input", function() {
+      let frase = $('#frase').text();
+      let digitado = campo.val();
+      //  let comparavel = frase.substr(0 , digitado.length);
+   
+      //  if(digitado == comparavel) {
+      //      campo.addClass("certo");
+      //      campo.removeClass("errado");
+      //  } else {
+      //      campo.addClass("errado");
+      //      campo.removeClass("certo");
+      //  }
+   
+      if( frase.startsWith(digitado)) {
+         campo.addClass('certo');
+         campo.removeClass('errado');
+        } else {
+         campo.addClass('errado');
+         campo.removeClass('certo')
+        }
+   });
+}
 
-campo.on("input", function() {
-    let digitado = campo.val();
-   //  let comparavel = frase.substr(0 , digitado.length);
-
-   //  if(digitado == comparavel) {
-   //      campo.addClass("certo");
-   //      campo.removeClass("errado");
-   //  } else {
-   //      campo.addClass("errado");
-   //      campo.removeClass("certo");
-   //  }
-
-   if( frase.startsWith(digitado)) {
-      campo.addClass('certo');
-      campo.removeClass('errado');
-     } else {
-      campo.addClass('errado');
-      campo.removeClass('certo')
-     }
-});
 
 function reiniciaJogo() {
    campo.attr("disabled", false);

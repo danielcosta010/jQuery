@@ -58,13 +58,3 @@ function removeLinha(e) {
 function removePlacar()  {
   $('.placar').stop().slideToggle(600)
 }
-
-
-  
-$("#dropdown").mouseenter(function() {
-  $("#opcoes").stop().slideDown();
-});
-
-$("#dropdown").mouseleave(function() {
-  $("#opcoes").stop().slideUp();
-});
