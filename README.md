@@ -9,6 +9,5 @@
 
   <img src="img/foto_capa.png" alt="Foto capa do projeto">
 
-  `$('Placar').show()`
 
   <p>Desenvolvido em HTML5, Css3, Js(jQuery), Materialize.</p>

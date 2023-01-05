@@ -5,8 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alura Typer</title>
-    <link rel="stylesheet" href="css/libs/materialize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="css/libs/google-fonts.css">
+
+    <link rel="stylesheet" href="css/selectize.min.css">
     
     <link rel="stylesheet" href="css/estilos.css">
 </head>
@@ -17,12 +19,13 @@
         <div class="center">
             <img src="img/spinner.gif" alt="Spiner" class="spiner">
             <p class="erro">Ocorreu um erro, por favor tente novamente.</p>
+            <p id="mensagem-placar"></p>
         </div>
 
-        <ul class="center">
+        <ul class="center tempo">
             <li class="icones">
                 <i class="material-icons">assignment</i> 
-                <span id="tamanho-frase"></span> Palavras
+                <span id="tamanho-frase"></span> Palavras na frase
             </li>
             <li class="icones">
                 <i class="material-icons">av_timer</i> 
@@ -34,21 +37,34 @@
 
         <div class="botoes">
             <!-- <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons" id="reinicia-jogo">refresh</i></a> -->
-            <button id="reinicia-jogo" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons" id="reinicia-jogo">refresh</i></button>
+            <button id="reinicia-jogo" class="btn-floating btn-large waves-effect waves-light red tooltipped" data-tooltip="Reiniciar a digitação"><i class="material-icons" id="reinicia-jogo">refresh</i></button>
 
-            <button id="remove-placar" class="btn-floating btn-large waves-effect waves-light green"><i class="material-icons" id="reinicia-jogo">visibility</i></button>
+            <button id="esconde-placar" class="btn-floating btn-large waves-effect waves-light green tooltipped" data-tooltip="Mostrar/Ocultar Placar"><i class="material-icons" id="reinicia-jogo">visibility</i></button>
 
-            <button id="botao-frase" class="btn-floating btn-large waves-effect waves-light blue"><i class="material-icons" id="reinicia-jogo">shuffle</i></button>
+            <button id="botao-frase" class="btn-floating btn-large waves-effect waves-light blue tooltipped" data-tooltip="Trocar a frase"><i class="material-icons">shuffle</i></button>
 
-            <button id="pesquisa-frase" class="btn-floating btn-large waves-effect waves-light teal darken-4
-            "><i class="material-icons" id="reinicia-jogo">search</i></button>
+            <button id="pesquisa-frase" class="btn-floating btn-large waves-effect waves-light teal darken-4 tooltipped" data-tooltip="Digite um numero ao lado para escolher a frase" data-position="rigth" ><i class="material-icons">search</i></button>
             <input type="number" name="" id="input-pesquisa" min="0">
+            <div class="select-usuarios">
+                <select name="" id="usuarios">
+                    
+                </select>
+            </div>
+
+            <button id="salva-placar" class="btn-floating btn-large waves-effect waves-light yellow tooltipped right" data-tooltip="Salvar Placar"><i class="material-icons">save</i></button>
         </div>
+
     
 
-        <ul class="center">
-            <li><span id="contador-caracteres">0</span> Caracteres</li>
-            <li><span id="contador-palavras">0</span> Palavras</li>
+        <ul class="center caracteres">
+            <li class="icones">
+                <i class="material-icons">keyboard</i>
+                <span id="contador-caracteres">0</span> Caracteres digitados
+            </li>
+            <li class="icones">
+                <i class="material-icons">format_list_numbered</i>
+                <span id="contador-palavras">0</span> Palavras digitadas
+            </li>
         </ul>
 
         <section class="placar">
@@ -69,11 +85,18 @@
         
     </div>
 
-    
+    <!-- Jquery -->
     <script src="js/jquery.js"></script>
+
+    <!-- Materialize JS -->
+    
     <script src="js/main.js"></script>
     <script src="js/placar.js"></script>
     <script src="js/frase.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script src="js/init-materialize.js"></script>
+    <script src="js/selectize.js"></script>
+    
     
 </body>
 </html>

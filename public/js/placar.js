@@ -1,7 +1,8 @@
-$('#remove-placar').click(removePlacar);
+$('#esconde-placar').click(escondePlacar);
+$('#salva-placar').click(salvaPlacar);
 
 function inserePlacar() {
-  let usuario = 'Daniel';
+  let usuario = $('#usuarios').val();
   let corpoTabela = $('.placar').find('tbody');
   let numPalavras = $('#contador-palavras').text();
   
@@ -55,6 +56,50 @@ function removeLinha(e) {
   }, 2000);
 }
 
-function removePlacar()  {
-  $('.placar').stop().slideToggle(600)
+function escondePlacar()  {
+  $('.placar').stop().slideToggle(600);
+  scrollPlacar();
+}
+
+function salvaPlacar() {
+  let placar = [];
+  let linhas = $('tbody>tr');
+
+  linhas.each(function() {
+    let usuario = $(this).find('td:nth-child(1)').text();
+    let palavras = $(this).find('td:nth-child(2)').text();
+
+    let score = {
+      usuario: usuario,
+      pontos: palavras
+    }
+
+    placar.push(score);
+  });
+
+  let dados = {
+    placar: placar
+  }
+
+  $.post('http://localhost:3000/placar', dados, function(e) {
+    $('#mensagem-placar').text('Placar salvo com sucesso!').css('color', '#6aa412')
+    console.log('Salvou no servidor');
+  }).fail(function() {
+    $('#mensagem-placar').text('Erro ao salvar o placar, tente novemente!').css('color', '#ff0000')
+  }).always(function() {
+    setTimeout(function() {
+      $('#mensagem-placar').hide()
+    }, 1800)
+  })
+}
+
+function pegaPlacar() {
+  $.get('http://localhost:3000/placar', function(data) {
+    
+    $(data).each(function() {
+      let linha = novaLinha(this.usuario, this.pontos);
+      $('tbody').append(linha);
+      linha.find('.remover').click(removeLinha);
+    })
+  })
 }

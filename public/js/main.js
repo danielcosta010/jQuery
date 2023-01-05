@@ -10,6 +10,11 @@ $(() => {
    iniciaTempo();
    inicializaMarcadores();
    reinicia.click(reiniciaJogo);
+   pegaPlacar();
+   $('#usuarios').selectize({
+      create: true,
+      sortField: 'text'
+  });
 })
 
 function atualizaTempoInicial(tempo) {
@@ -94,3 +99,4 @@ function reiniciaJogo() {
    campo.removeClass("certo");
    iniciaTempo()
 }
+

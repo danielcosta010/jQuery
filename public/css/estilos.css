@@ -44,3 +44,20 @@ body {
   width: 50px;
   text-align: center;
 }
+
+.tempo, .caracteres {
+  display: flex;
+  justify-content: center;
+  column-gap: 30px;
+}
+.select-usuarios {
+  display: inline-block;
+}
+#usuarios, .selectize-input {
+  margin-left: 20px;
+  height: 50px;
+  width: 170px;
+}
+#mensagem-placar {
+  font-size: 20px;
+}
