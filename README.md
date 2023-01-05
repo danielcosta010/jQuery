@@ -7,7 +7,7 @@
       Possui marcador de quantidade de palavras digitadas.
   </p>
 
-  <img src="img/foto_capa.png" alt="Foto capa do projeto">
+  <img width= '800px' src="https://github.com/danielcosta010/jQuery/blob/main/public/img/foto_capa.png" alt="Foto capa do projeto">
 
 
   <p>Desenvolvido em HTML5, Css3, Js(jQuery), Materialize.</p>
